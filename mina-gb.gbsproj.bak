@@ -599,7 +599,8 @@
                         "variable": "L0",
                         "__collapseElse": true,
                         "__disableElse": true,
-                        "__collapse": true
+                        "__collapse": false,
+                        "__comment": true
                     },
                     "children": {
                         "true": [
@@ -1652,7 +1653,6 @@
                     "animSpeed": 15,
                     "paletteId": "",
                     "isPinned": false,
-                    "collisionGroup": "2",
                     "script": [],
                     "startScript": [
                         {
@@ -2081,9 +2081,17 @@
                                                             {
                                                                 "command": "EVENT_SET_TRUE",
                                                                 "args": {
-                                                                    "variable": "7"
+                                                                    "variable": "7",
+                                                                    "__collapse": true
                                                                 },
                                                                 "id": "1b79172f-0a30-45f1-a22f-750b3fbea0a5"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "e5ccf382-8a99-48a7-84f7-46fb1b0ebb83"
                                                             },
                                                             {
                                                                 "command": "EVENT_ACTOR_SET_STATE",
@@ -2166,6 +2174,13 @@
                                                                     "variable": "7"
                                                                 },
                                                                 "id": "cbdb112a-c008-4af0-9902-2865ce45dbb8"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "3c45ce36-1db2-4e22-ba30-177f88782cf9"
                                                             }
                                                         ],
                                                         "false": []
@@ -2447,6 +2462,13 @@
                                                                 "id": "abfde75f-cfc7-4c29-a612-e87e3a3c6d40"
                                                             },
                                                             {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "187a000f-e686-4add-9b71-9612c5a85d17"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_ACTOR_SET_STATE",
                                                                 "args": {
                                                                     "actorId": "player",
@@ -2524,9 +2546,17 @@
                                                             {
                                                                 "command": "EVENT_SET_FALSE",
                                                                 "args": {
-                                                                    "variable": "7"
+                                                                    "variable": "7",
+                                                                    "__collapse": true
                                                                 },
                                                                 "id": "938254d3-9051-45da-a935-c54f677e7fd2"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "94846f18-74cb-43df-99aa-cc1251f03a02"
                                                             }
                                                         ],
                                                         "false": []
@@ -5321,6 +5351,13 @@
                                                                 "id": "9446f206-0131-42ae-ba6c-5fa6c10e6905"
                                                             },
                                                             {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "c7d4661e-e58a-43ed-b2a9-b29f56c4cc40"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_ACTOR_SET_STATE",
                                                                 "args": {
                                                                     "actorId": "player",
@@ -5401,6 +5438,13 @@
                                                                     "variable": "7"
                                                                 },
                                                                 "id": "a1f26aae-2512-4226-b95f-6ec166f05e0b"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "2d4ba385-1e4c-4370-9f82-52a77a47dbca"
                                                             }
                                                         ],
                                                         "false": []
@@ -5696,6 +5740,13 @@
                                                                 "id": "a4ce0d03-a1b3-42e6-af31-73a7ad568a4a"
                                                             },
                                                             {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "4e9c7642-bfda-450a-be38-0cc7813093c5"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_ACTOR_SET_STATE",
                                                                 "args": {
                                                                     "actorId": "player",
@@ -5776,6 +5827,13 @@
                                                                     "variable": "7"
                                                                 },
                                                                 "id": "51ead561-2614-4a4b-bebb-a999b4a6daf0"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "5cc57488-9bf0-4793-91f7-e07598ce2d7b"
                                                             }
                                                         ],
                                                         "false": []
@@ -7258,6 +7316,13 @@
                                                                 "id": "b79c421d-d9be-45fb-981f-ebf561628a83"
                                                             },
                                                             {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "4b1e006e-c0c2-4090-adbd-efc459433ae6"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_ACTOR_SET_STATE",
                                                                 "args": {
                                                                     "actorId": "player",
@@ -7338,6 +7403,13 @@
                                                                     "variable": "7"
                                                                 },
                                                                 "id": "2cbad011-4040-41f9-8b4b-c90a978ae0b6"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                                                                "args": {
+                                                                    "actorId": "$self$"
+                                                                },
+                                                                "id": "cdd6c1bc-e057-40f3-90c6-f9faead141f9"
                                                             }
                                                         ],
                                                         "false": []
@@ -8488,6 +8560,74 @@
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": []
+        },
+        {
+            "name": "Scene 7",
+            "backgroundId": "d8ae5b92-a6e1-4ec3-9688-568e70bea189",
+            "width": 20,
+            "height": 18,
+            "type": "LOGO",
+            "paletteIds": [
+                "default-bg-5"
+            ],
+            "spritePaletteIds": [],
+            "collisions": [],
+            "autoFadeSpeed": 1,
+            "id": "b1501ac1-3805-433a-ad4a-3f7d34793cf5",
+            "x": 194.40869960408997,
+            "y": 30,
+            "actors": [],
+            "triggers": [],
+            "script": [
+                {
+                    "command": "EVENT_RESET_VARIABLES",
+                    "args": {},
+                    "id": "06026cfa-836c-41e2-831c-91fcc77fb74d"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "6",
+                        "value": {
+                            "type": "number",
+                            "value": 5
+                        }
+                    },
+                    "id": "ac238021-1645-4328-b82f-565fb0da5fea"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "b",
+                            "select",
+                            "start",
+                            "a"
+                        ],
+                        "override": false,
+                        "__scriptTabs": "press"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SWITCH_SCENE",
+                                "args": {
+                                    "sceneId": "43a3f82a-0917-4161-b06a-afcfddaecddd",
+                                    "x": 10,
+                                    "y": 11,
+                                    "direction": "down",
+                                    "fadeSpeed": "2"
+                                },
+                                "id": "4dcfab96-7a98-4def-8205-cecb55bbbb6d"
+                            }
+                        ]
+                    },
+                    "id": "753c9153-a562-4e91-b3f3-fdb3566eaa6c"
+                }
+            ],
+            "playerHit1Script": [],
+            "playerHit2Script": [],
+            "playerHit3Script": []
         }
     ],
     "backgrounds": [
@@ -8498,7 +8638,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "ending.png"
+            "filename": "ending.png",
+            "tileColors": []
         },
         {
             "id": "90a3bc15-dcd5-4850-9d9a-e24c2b8ab2ac",
@@ -11102,6 +11243,16 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "placeholder.png",
+            "tileColors": []
+        },
+        {
+            "id": "d8ae5b92-a6e1-4ec3-9688-568e70bea189",
+            "name": "title",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "title.png",
             "tileColors": []
         }
     ],
@@ -16841,10 +16992,10 @@
             "id": "default-bg-5",
             "name": "Default BG 5",
             "colors": [
-                "F8F8B8",
-                "90C8C8",
+                "F81000",
+                "7000F8",
                 "486878",
-                "082048"
+                "000000"
             ],
             "defaultName": "Default BG 5",
             "defaultColors": [
@@ -17252,7 +17403,8 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_LOCK"
+                                    "script": "VM_LOCK",
+                                    "__comment": false
                                 },
                                 "id": "1a8f244c-aba0-429b-9dae-88f561190812"
                             },
@@ -17286,7 +17438,8 @@
                                 "command": "EVENT_WAIT",
                                 "args": {
                                     "time": 0.1,
-                                    "__collapse": true
+                                    "__collapse": true,
+                                    "__comment": false
                                 },
                                 "id": "c94dedac-722c-4ec2-a5e3-2511e7a2714f"
                             },
@@ -17320,7 +17473,8 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_UNLOCK"
+                                    "script": "VM_UNLOCK",
+                                    "__comment": false
                                 },
                                 "id": "b77c9fac-8e82-4a19-93d2-1c846900aeac"
                             }
@@ -17691,7 +17845,7 @@
                     "command": "EVENT_SWITCH",
                     "args": {
                         "variable": "0",
-                        "choices": 4,
+                        "choices": 5,
                         "__collapseCase0": false,
                         "value0": 1,
                         "__collapseCase1": false,
@@ -17724,7 +17878,8 @@
                         "value14": 15,
                         "__collapseCase15": false,
                         "value15": 16,
-                        "__collapseElse": false
+                        "__collapseElse": false,
+                        "__collapse": false
                     },
                     "children": {
                         "true0": [
@@ -17764,7 +17919,15 @@
                                 "id": "da351007-e4e7-44de-b48a-4efab456cdb1"
                             }
                         ],
-                        "true4": [],
+                        "true4": [
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 2 \n.dw VAR_UNDERGROUND, VAR_JUMPING\n.asciz \"\\003\\006\\002 FABBBCG\"\nVM_DISPLAY_TEXT"
+                                },
+                                "id": "8f69ea36-50b5-498b-8d56-cbdc5a36288f"
+                            }
+                        ],
                         "true5": [],
                         "true6": [],
                         "true7": [],
@@ -17778,11 +17941,20 @@
                         "true15": [],
                         "false": [
                             {
-                                "command": "EVENT_GBVM_SCRIPT",
+                                "command": "EVENT_OVERLAY_HIDE",
+                                "args": {},
+                                "id": "04b770f8-ba0a-4044-9bb4-93a4e623f233"
+                            },
+                            {
+                                "command": "EVENT_SWITCH_SCENE",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 2 \n.dw VAR_UNDERGROUND, VAR_JUMPING\n.asciz \"\\003\\006\\002 FABBBCG\"\nVM_DISPLAY_TEXT"
+                                    "sceneId": "b1501ac1-3805-433a-ad4a-3f7d34793cf5",
+                                    "x": 0,
+                                    "y": 0,
+                                    "direction": "",
+                                    "fadeSpeed": "2"
                                 },
-                                "id": "8f69ea36-50b5-498b-8d56-cbdc5a36288f"
+                                "id": "93dcabfa-87a2-457e-80c6-82a3dfa4245c"
                             }
                         ]
                     },
@@ -17915,6 +18087,10 @@
         {
             "id": "9",
             "name": "attack2"
+        },
+        {
+            "id": "10",
+            "name": "invincibleEnemy"
         },
         {
             "id": "f7126a19-4233-4ae2-ba90-738cdb04e7d3__L0",
@@ -18067,10 +18243,6 @@
         {
             "id": "4fe30c76-d4b9-4562-9790-68b79cff5e10__L5",
             "name": "hp"
-        },
-        {
-            "id": "10",
-            "name": "invincibleEnemy"
         }
     ],
     "engineFieldValues": [
@@ -18080,17 +18252,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "43a3f82a-0917-4161-b06a-afcfddaecddd",
-        "startX": 10,
-        "startY": 11,
+        "startSceneId": "b1501ac1-3805-433a-ad4a-3f7d34793cf5",
+        "startX": 2,
+        "startY": 15,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 0,
-        "worldScrollY": 82,
-        "zoom": 135.98924604058266,
+        "worldScrollX": 549,
+        "worldScrollY": 215,
+        "zoom": 202.84750059247017,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -18128,7 +18300,7 @@
         "defaultPlayerSprites": {
             "TOPDOWN": "409c2d44-2ce0-4c56-a48f-1763863a42c0",
             "PLATFORM": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
-            "ADVENTURE": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+            "ADVENTURE": "409c2d44-2ce0-4c56-a48f-1763863a42c0",
             "SHMUP": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
             "POINTNCLICK": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
             "LOGO": "581d34d0-9591-4e6e-a609-1d94f203b0cd"
