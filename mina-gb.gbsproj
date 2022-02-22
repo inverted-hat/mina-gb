@@ -4806,7 +4806,7 @@
                     ],
                     "id": "63883039-9303-42f2-8f7c-8781fecadc0f",
                     "x": 28,
-                    "y": 4
+                    "y": 5
                 },
                 {
                     "name": "flowers4",
@@ -4878,7 +4878,7 @@
                     ],
                     "id": "fc2afc4e-03d9-4133-bea2-cae438362994",
                     "x": 28,
-                    "y": 6
+                    "y": 7
                 }
             ],
             "triggers": [
@@ -4922,6 +4922,40 @@
                     "height": 4,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "72e06043-ea12-4c7c-b206-8b26f47e44a8"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "73fd27c7-12c7-4944-9d33-a62c6a8e44db"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "8ec65b87-7b64-4aae-b433-7d0716b14be9"
+                                    }
+                                ]
+                            },
+                            "id": "0a6f0863-2f0b-4c8c-8960-e750ae6fe49a"
+                        },
+                        {
                             "command": "EVENT_ACTOR_SET_POSITION",
                             "args": {
                                 "actorId": "$self$",
@@ -4935,6 +4969,62 @@
                                 }
                             },
                             "id": "bedbb71c-a877-40c9-a1a1-572279c82d9f"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "8e6e4d84-281c-459b-8813-05165b36edff"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "a1e6c18a-5022-4a8a-a1ed-6394977192fd"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "14dbbbcb-4004-4aa1-b87d-767d1fc2ed5a"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "9622bcec-5cc3-44a5-abc3-f73d668be1c8"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "9af0e9e2-a408-459e-abf9-73e021ee5ad4"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "695f1813-1cae-4e69-b5e1-f7637445f2fc"
+                                    }
+                                ]
+                            },
+                            "id": "4d762efa-0c69-4e2b-8ae9-46377d28faf6"
                         }
                     ],
                     "leaveScript": []
@@ -4947,6 +5037,40 @@
                     "width": 2,
                     "height": 4,
                     "script": [
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "6a332dc5-4c01-420f-be17-d1865f03c75b"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "15d02d41-1903-4ee4-a807-8eb5c63043a9"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "e55d1512-32d2-4eb7-ace5-2bf5daccea4b"
+                                    }
+                                ]
+                            },
+                            "id": "b0b13be7-678c-4118-8e38-746962c9be01"
+                        },
                         {
                             "command": "EVENT_ACTOR_SET_POSITION",
                             "args": {
@@ -4961,6 +5085,62 @@
                                 }
                             },
                             "id": "e1746715-d62e-4f11-8232-afe756a56efb"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "91013278-a227-4160-a142-a3358288d889"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "ad459834-35d0-4044-ba74-e9565d629eb4"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "ee2a8098-1c7f-4bcb-ab45-f6dd9434b437"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "9fc86ef8-9f12-4bdb-981c-b4df106fa17b"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "392481d2-0c13-466e-b771-7520b7da7da2"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "ab378367-d9ea-493a-8453-afae714ae4a5"
+                                    }
+                                ]
+                            },
+                            "id": "b4182301-e7d5-4149-bc96-8d25d2fcefdd"
                         }
                     ],
                     "leaveScript": []
@@ -4974,11 +5154,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "b228a682-b951-4ad9-9a9a-da5fac4c1574"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "b73edfd4-25da-4e1c-af4e-22359fd9b9a7"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "fedab1cd-07c0-483a-909b-fe712b0a4287"
+                                    }
+                                ]
+                            },
+                            "id": "eb1d9772-3792-4a35-938b-f1c8ef1c1909"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "right",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -5017,6 +5232,62 @@
                                 ]
                             },
                             "id": "9606853c-9723-49ce-adee-d5f29ff8cf85"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "067a2056-97c3-4185-b29d-84995947089d"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "06804404-5191-4275-a703-1755b6776299"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "214267e4-9341-4c2c-b220-649e4b4a7c48"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "8a384b5e-67a6-4c08-9e71-013cda5e6da5"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "846b0ce4-e48e-48db-b8d8-4aec25a1ac5f"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "3892339f-cacf-4c9c-8a73-83f3a4f059be"
+                                    }
+                                ]
+                            },
+                            "id": "1db4b0cd-343f-4968-8d65-e308584730be"
                         }
                     ],
                     "leaveScript": []
@@ -5030,11 +5301,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "c89ec898-179b-4069-b0a3-a9f3e7400e59"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "53242147-eb8d-4dff-88e7-1d33d4e71814"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "475feb30-ceda-4856-97ee-2e5815c09b2d"
+                                    }
+                                ]
+                            },
+                            "id": "f7d938e7-84c1-4c61-8e11-b13e0b857598"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "down",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -5073,6 +5379,62 @@
                                 ]
                             },
                             "id": "34672aee-1b3e-4a88-9c7e-b2ba0385fcb9"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "7b9dc574-375f-4410-8fa8-aaf978e7caee"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "fe7375c7-a308-4ebe-bba8-555c6c3012e4"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "7863bf23-edcf-4c18-a865-1ba0e29a2088"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "d68dd7bc-d301-4e90-a369-772cb33b4d04"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "93049183-b16c-4e20-8761-4c0363cc8b36"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "6d641e1f-22e4-48c5-9216-4118937cf0ad"
+                                    }
+                                ]
+                            },
+                            "id": "47441746-2a4d-4cae-81cd-3d1f5b7bf077"
                         }
                     ],
                     "leaveScript": []
@@ -6017,7 +6379,8 @@
                             "args": {
                                 "variable": "5",
                                 "__collapseElse": true,
-                                "__disableElse": true
+                                "__disableElse": true,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6032,6 +6395,13 @@
                                 "false": []
                             },
                             "id": "598fdf21-732d-473b-ba1d-603586777292"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "0411de98-6ae0-4dc7-a245-84058c49757c"
                         }
                     ],
                     "updateScript": [],
@@ -6040,7 +6410,7 @@
                     "hit3Script": [],
                     "id": "52fcd762-60d6-43c1-9a43-7c5b4adc978a",
                     "x": 9,
-                    "y": 6
+                    "y": 7
                 }
             ],
             "triggers": [
@@ -6075,11 +6445,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "fda89e8a-b17b-4af0-81b2-33f9df1f144b"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "9e395532-322a-48ed-abf0-a6ad55357f5b"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "88a57a8d-fbd1-4dfb-ad7d-8d1f84da4803"
+                                    }
+                                ]
+                            },
+                            "id": "5ec79e0e-22af-442b-b86c-eea80933e0d1"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "left",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6118,6 +6523,62 @@
                                 ]
                             },
                             "id": "8d244a3c-e4ab-4a97-8a90-2fff45c4e7a4"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "b2b6936b-7c3c-4464-850b-0e3a42627906"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "709a79cb-7475-4499-93d5-d5f26896bb00"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "0202e032-ab0d-4b13-9e72-c3b5f449232c"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "edd5e7c2-fba3-4788-85b5-759bf2d8ee38"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "c3aec40e-18ec-4e38-a32a-bd968cd48771"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "03497944-c8f2-4b86-bfde-626040957777"
+                                    }
+                                ]
+                            },
+                            "id": "39666af5-ebc8-4fa0-84b9-dbe53b8817ef"
                         }
                     ],
                     "leaveScript": []
@@ -6131,11 +6592,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "3bacf561-e2e8-4f32-a6d2-6f458bebef1c"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "9ac946ff-74e9-48e1-9011-194e0a3cd757"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "804ae4e2-239c-4a3c-af14-da8aea9c01df"
+                                    }
+                                ]
+                            },
+                            "id": "b689f4dc-9ed7-4c0c-ab1c-e21244336332"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "left",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6204,6 +6700,62 @@
                                 ]
                             },
                             "id": "28341ffc-dd94-4849-a2ec-34e90f5a381b"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "2064ae4c-110b-4e98-b91b-088ac69d72a2"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "19de6840-4ef2-479d-8818-5dc325e1b080"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "38507789-af48-4279-ae82-d5902a28fc11"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "551e38a3-37a9-4b57-838e-c00023a409d2"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "6670989f-d12b-432b-a95f-8cec27752244"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "4d0ecd34-2dab-4c83-af5f-75aed856d7d2"
+                                    }
+                                ]
+                            },
+                            "id": "26af726e-fab1-405e-9964-c4ef969d6776"
                         }
                     ],
                     "leaveScript": []
@@ -6217,11 +6769,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "3fcc7238-278c-4f6d-9610-16103c018d0b"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "96488e42-5fa4-4f10-94f2-9a4225709f2d"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "d83d9d9f-49c6-4d12-b9bb-2ac438e6434c"
+                                    }
+                                ]
+                            },
+                            "id": "20e6bb20-de47-4f42-aabe-8b0d5247d1cc"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "left",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6290,6 +6877,62 @@
                                 ]
                             },
                             "id": "1c030b68-fbea-42b5-99e7-963d108e5cc7"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "a8824470-39f8-4e40-9671-756dda394a20"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "eedf21ea-7752-473e-b506-2f38896e368a"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "32b69818-837c-4659-a794-fac16d4a7711"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "c2a96012-ea33-4678-b04f-09deb3f3d810"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "3f6cfd23-bd95-4157-bc9e-45ff8c6a1047"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "6500fe45-a48e-454d-bfe3-c257e65fbef9"
+                                    }
+                                ]
+                            },
+                            "id": "e9d7e8e0-919a-4a4a-ba9c-af324f282904"
                         }
                     ],
                     "leaveScript": []
@@ -6303,11 +6946,46 @@
                     "height": 1,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "f4352478-bec2-4da8-a53a-ba57670dcf01"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "d8c90f4a-f6e8-4a08-8e6e-0ab4f468f19d"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "de17bb06-1663-47a9-9d50-87f1e54c681d"
+                                    }
+                                ]
+                            },
+                            "id": "dab731da-a5cc-4b47-986a-bf733316760b"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "right",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6406,6 +7084,62 @@
                                 ]
                             },
                             "id": "cdf88e58-f739-47f7-9503-b90b555d02d6"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "ddc212c5-8bdc-4115-98dd-2e0608e4bd22"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "2800e566-6d64-4c33-b4d1-1f3b0470fae4"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "da15e98b-c03e-4ec3-9281-feda8a86b02d"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "3ba7c048-8f8a-4129-8a94-da847fef18f5"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "da7c4bb4-203a-4b64-9577-14fa4ab27625"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "04de7a9b-c085-4baa-86cc-25ec9f4e945c"
+                                    }
+                                ]
+                            },
+                            "id": "1c9ab0ef-33e4-4b10-88f0-4a8452857a1c"
                         }
                     ],
                     "leaveScript": []
@@ -6419,11 +7153,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "d2c7de77-0125-483e-ae34-e85c5ce6e249"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "12a540e2-fde8-4723-84f8-1e1b83f06473"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "18e2fcf6-bc4b-4a92-bb06-39c59af6d231"
+                                    }
+                                ]
+                            },
+                            "id": "74a4bbb8-9f59-4ab7-8747-a2163e0c2552"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "right",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6462,6 +7231,62 @@
                                 ]
                             },
                             "id": "13dd4a50-a9f1-4a0f-a63c-b5288b915557"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "7148038e-5b2b-4253-8646-565815f063b1"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "71c95571-3f7c-42d8-a171-e6ab006b4dfb"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "2f9af72b-9a6d-4e9f-b937-d578d0fe750f"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "4c238ae6-c256-47ad-84bd-a82d71b8ada7"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "7d7720ed-71a8-431a-ba47-c93ba5544deb"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "13907ad2-490a-4107-9a32-25564cce83ae"
+                                    }
+                                ]
+                            },
+                            "id": "63d85706-941d-4251-aeb3-d9c5b7727ec4"
                         }
                     ],
                     "leaveScript": []
@@ -6475,11 +7300,46 @@
                     "height": 1,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "c9ba3e74-0083-48af-b22a-d93a79d7fb4b"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "a0fa1d83-d0d2-4c6e-b429-e66873b382ac"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "aa1730ff-cfc5-4b5c-9087-766831666a5c"
+                                    }
+                                ]
+                            },
+                            "id": "4dbf780d-a97f-40ab-8ca3-a3f7f7f98da8"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "right",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6578,6 +7438,62 @@
                                 ]
                             },
                             "id": "875a68e5-4e6b-4735-b9c8-6152c95f974f"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "f787d6df-e737-429d-8ae7-75f33cb881f9"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "cc4f7b51-adb8-464e-ae27-c3b2b4d892cb"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "8c2c595a-7ef3-40ea-929b-eb0237568bcc"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "f73ce86f-9526-4554-9509-90d1f13dc607"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "b5ce7988-6039-4e18-97bb-0fc82883e4e0"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "7390eee5-ea05-4508-97b8-016d55fd2171"
+                                    }
+                                ]
+                            },
+                            "id": "6a3c33a1-e4bd-4402-a03e-1d7152ee4a4c"
                         }
                     ],
                     "leaveScript": []
@@ -6591,11 +7507,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "d8e429d0-897d-49f4-9a18-7b6c5a0afd1e"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "61768a1f-55d4-4355-82a1-5ca92e7cbe90"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "983b7274-c72b-424b-b2aa-87b966cb6952"
+                                    }
+                                ]
+                            },
+                            "id": "4d74f729-0a42-49f9-b274-c387bf4d5a65"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "right",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6634,6 +7585,101 @@
                                 ]
                             },
                             "id": "92b0a436-c9ac-4a16-835a-9fb19caf3b82"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "f39ed8ab-5e5a-4bd5-92f3-81a53db6e010"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "79b2a041-e626-4b05-af70-97500c282b81"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "270e4732-bde7-4197-9561-33eed892e84f"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "c8ee75e4-f344-4f80-a980-07384b688853"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "4925c478-9aec-4683-896f-6634eb158f08"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "b546cbb1-0b3e-4979-8918-79b9aae24a56"
+                                    }
+                                ]
+                            },
+                            "id": "5e6b6f3a-3f8c-444c-843f-8a1969806137"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "key",
+                    "id": "9571580d-4839-4d9c-90d9-dd54e854d95a",
+                    "x": 9,
+                    "y": 6,
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_IF_FALSE",
+                            "args": {
+                                "variable": "5",
+                                "__collapseElse": true,
+                                "__disableElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "5"
+                                        },
+                                        "id": "8c1ab1a9-d0e4-4091-8186-78baef9bed6c"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_HIDE",
+                                        "args": {
+                                            "actorId": "52fcd762-60d6-43c1-9a43-7c5b4adc978a"
+                                        },
+                                        "id": "0006df05-df39-41d5-b204-f7bb08d12e81"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "348dcf60-dca0-43fb-97e4-9e62ba59ab23"
                         }
                     ],
                     "leaveScript": []
@@ -6699,22 +7745,7 @@
                 }
             ],
             "playerHit1Script": [],
-            "playerHit2Script": [
-                {
-                    "command": "EVENT_ACTOR_HIDE",
-                    "args": {
-                        "actorId": "52fcd762-60d6-43c1-9a43-7c5b4adc978a"
-                    },
-                    "id": "570c3bdd-e5a0-42bd-ab1a-46a99bd83809"
-                },
-                {
-                    "command": "EVENT_SET_TRUE",
-                    "args": {
-                        "variable": "5"
-                    },
-                    "id": "21be3ded-a43d-489e-92df-23a441cbe2c2"
-                }
-            ],
+            "playerHit2Script": [],
             "playerHit3Script": []
         },
         {
@@ -6723,7 +7754,12 @@
             "width": 32,
             "height": 18,
             "type": "TOPDOWN",
-            "paletteIds": [],
+            "paletteIds": [
+                null,
+                null,
+                null,
+                "318ed5f5-a5dd-4a8b-b525-3f9405756910"
+            ],
             "spritePaletteIds": [],
             "collisions": [
                 15,
@@ -8355,6 +9391,42 @@
                     "id": "b6aa319f-fb73-4d47-a21c-f09ccfb5bf73",
                     "x": 24,
                     "y": 1
+                },
+                {
+                    "name": "bone",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "20c700eb-bbdc-4e53-8829-055d29e68c8a",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "collisionGroup": "",
+                    "script": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_ACTOR_HIDE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "981c98ac-f6c9-4382-a93a-b421eafafd17"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "e125eb49-fbd4-438e-a2e7-bbe34a5603c3"
+                        }
+                    ],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "bf81755b-3a64-4275-b2a5-89864daf3d74",
+                    "x": 30,
+                    "y": 17
                 }
             ],
             "triggers": [
@@ -8574,6 +9646,115 @@
                                 "false": []
                             },
                             "id": "3336c4fd-b000-4f68-a684-0349ad59c7c4"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "552665bf-8e58-4b6c-83ec-d64cf7580775",
+                    "x": 11,
+                    "y": 5,
+                    "width": 1,
+                    "height": 1,
+                    "script": [
+                        {
+                            "command": "EVENT_IF_FALSE",
+                            "args": {
+                                "variable": "L0",
+                                "__collapseElse": true,
+                                "__disableElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "L0"
+                                        },
+                                        "id": "20c0f20a-5a4b-47ef-8dbf-5373aa609bb5"
+                                    },
+                                    {
+                                        "command": "EVENT_VARIABLE_MATH",
+                                        "args": {
+                                            "vectorX": "11",
+                                            "operation": "add",
+                                            "other": "val",
+                                            "vectorY": "L0",
+                                            "value": 5,
+                                            "minValue": "0",
+                                            "maxValue": "32767",
+                                            "clamp": false
+                                        },
+                                        "id": "679cf30d-0000-48f5-afc0-5b694cbe04e9"
+                                    },
+                                    {
+                                        "command": "EVENT_PALETTE_SET_BACKGROUND",
+                                        "args": {
+                                            "palette0": "keep",
+                                            "palette1": "keep",
+                                            "palette2": "keep",
+                                            "palette3": "36e99437-bf73-414a-9a34-647497b32f53",
+                                            "palette4": "keep",
+                                            "palette5": "keep",
+                                            "palette6": "keep",
+                                            "palette7": "keep",
+                                            "__collapse": true
+                                        },
+                                        "id": "eee6fe4e-d52e-4b77-92eb-7cb6a140fdbb"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_POSITION",
+                                        "args": {
+                                            "actorId": "bf81755b-3a64-4275-b2a5-89864daf3d74",
+                                            "x": {
+                                                "type": "number",
+                                                "value": 10
+                                            },
+                                            "y": {
+                                                "type": "number",
+                                                "value": 5
+                                            }
+                                        },
+                                        "id": "c1bfb985-b7a2-42b0-bc5d-95e4851ef14c"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SHOW",
+                                        "args": {
+                                            "actorId": "bf81755b-3a64-4275-b2a5-89864daf3d74"
+                                        },
+                                        "id": "4ada74c4-6009-430a-95ae-03d7e9b90d13"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                                        "args": {
+                                            "actorId": "bf81755b-3a64-4275-b2a5-89864daf3d74",
+                                            "x": -1,
+                                            "y": -1,
+                                            "moveType": "diagonal",
+                                            "useCollisions": false
+                                        },
+                                        "id": "a6d8259b-70eb-4838-a072-a85a185c2fbd"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_HIDE",
+                                        "args": {
+                                            "actorId": "bf81755b-3a64-4275-b2a5-89864daf3d74"
+                                        },
+                                        "id": "24cb5c69-fee3-415f-a969-717d5ec15d79"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "9997a1bb-12e7-4926-a45e-c190bc65c37c"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "eeee10af-e555-4d2c-b2b2-b1c73400452b"
                         }
                     ],
                     "leaveScript": []
@@ -10759,11 +11940,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "5151def8-2ad5-4597-ba05-86f2d28b218c"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "99316c09-19de-40a2-a158-1c176a206371"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "55013650-ab26-47a6-8b61-a8ed80eb38c4"
+                                    }
+                                ]
+                            },
+                            "id": "012c8a15-ff90-441b-9e65-16ecf237d54a"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "left",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -10802,6 +12018,62 @@
                                 ]
                             },
                             "id": "6aa0b909-0856-4f43-b79e-83e59c0e7154"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "f44a799b-35d0-4783-8bf1-522c9efda05d"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "477b8648-2020-469c-89e0-43682149f772"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "390e9e06-d2ea-48d4-98c5-d641088f4852"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "178a4312-0991-4af7-938d-06863d760d86"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "3347d2b7-83ff-4bff-b2f0-f386dbedcaf1"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "b365ca29-f388-4f8e-b273-fa32b5a5cccf"
+                                    }
+                                ]
+                            },
+                            "id": "d0fd61b9-d0df-41fd-9c5f-8ed600120e86"
                         }
                     ],
                     "leaveScript": []
@@ -10815,11 +12087,46 @@
                     "height": 2,
                     "script": [
                         {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Player hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "2c0a4fc5-af0d-4027-a223-3c5c0c0dae77"
+                                    },
+                                    {
+                                        "command": "EVENT_DEC_VALUE",
+                                        "args": {
+                                            "variable": "6"
+                                        },
+                                        "id": "7be6dfa7-05f6-4088-9973-17904d633761"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "30a268bc-aa2c-4b20-9cfb-c15ea78a1a5c",
+                                            "$variable[0]$": "6"
+                                        },
+                                        "id": "725b4672-6d9b-4584-a658-e76402126f95"
+                                    }
+                                ]
+                            },
+                            "id": "428276f6-72c1-4843-bb6d-344ecce17b29"
+                        },
+                        {
                             "command": "EVENT_IF_ACTOR_DIRECTION",
                             "args": {
                                 "actorId": "$self$",
                                 "direction": "left",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -10858,6 +12165,62 @@
                                 ]
                             },
                             "id": "21c20240-f0cd-4733-80d2-84ba04355d4d"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "palyer hit"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "0f19929f-5db8-45ca-ab1f-da29b07cedec"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "ef318172-093c-4277-86f9-f718b33d031a"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "13792270-0813-475d-9f75-c9519d34bbfb"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "hit"
+                                        },
+                                        "id": "9db4f886-c16a-4926-a92e-ea1e9984fed2"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.1
+                                        },
+                                        "id": "344f69f1-62b2-414c-8900-2b5feea05301"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "2f7e01a4-d5ad-4c73-a4f9-b57ba9375b24"
+                                    }
+                                ]
+                            },
+                            "id": "ea6f8f6c-f605-4ca0-96fb-6a5d951818e3"
                         }
                     ],
                     "leaveScript": []
@@ -13571,8 +14934,8 @@
                 0,
                 0,
                 0,
-                0,
-                0,
+                3,
+                3,
                 0,
                 0,
                 0,
@@ -13603,8 +14966,8 @@
                 0,
                 0,
                 0,
-                0,
-                0,
+                3,
+                3,
                 0,
                 0,
                 0,
@@ -18073,9 +19436,9 @@
             "numFrames": 2,
             "type": "animated",
             "filename": "key.png",
-            "checksum": "584cc6c914ad2e8e5ae600723de750a21bf8d825",
+            "checksum": "88fd4e0ede06a96540123a1c35b86fc502120b0d",
             "width": 32,
-            "height": 16,
+            "height": 32,
             "states": [
                 {
                     "id": "b8294b4e-254d-4e10-b8f5-2561bfc66ec5",
@@ -18090,24 +19453,50 @@
                                     "id": "abdc6e90-16da-488c-ab9a-1963d84973f3",
                                     "tiles": [
                                         {
-                                            "id": "30a903d9-0c33-4dbf-b79e-cb55dbedca51",
+                                            "id": "c178a79f-736b-49cf-9be7-68d64a80b823",
                                             "x": 0,
-                                            "y": 0,
+                                            "y": 16,
                                             "sliceX": 0,
                                             "sliceY": 0,
+                                            "palette": 0,
                                             "flipX": false,
                                             "flipY": false,
-                                            "palette": 0,
-                                            "paletteIndex": 3,
                                             "objPalette": "OBP0",
+                                            "paletteIndex": 3,
                                             "priority": false
                                         },
                                         {
-                                            "id": "01d586a6-408d-4c10-be7b-a15ae41473de",
+                                            "id": "f40f1d12-0cc1-49d1-906c-cfaec7658b83",
+                                            "x": 8,
+                                            "y": 16,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 3,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "168bc81c-2cf4-4b2c-8ac4-4e305303da49",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 3,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "c414be60-09f3-4c39-b3cf-9c10b811dbd4",
                                             "x": 8,
                                             "y": 0,
                                             "sliceX": 8,
-                                            "sliceY": 0,
+                                            "sliceY": 16,
                                             "palette": 0,
                                             "flipX": false,
                                             "flipY": false,
@@ -18121,29 +19510,55 @@
                                     "id": "f6948ad1-2294-4dc7-8bd5-452ff87ca780",
                                     "tiles": [
                                         {
-                                            "id": "2836143b-427d-4587-8d41-57a0f9cc7f28",
+                                            "id": "b9f4a8e2-d99d-443d-ad79-4e1d5983df60",
                                             "x": 0,
                                             "y": 0,
                                             "sliceX": 16,
-                                            "sliceY": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
                                             "flipX": false,
                                             "flipY": false,
-                                            "palette": 0,
-                                            "paletteIndex": 3,
                                             "objPalette": "OBP0",
+                                            "paletteIndex": 3,
                                             "priority": false
                                         },
                                         {
-                                            "id": "068e36cc-669a-4d6b-a562-9b9e3c11859b",
+                                            "id": "0f68f11c-d3c1-4d84-a1c1-6b8bb62e0006",
                                             "x": 8,
                                             "y": 0,
                                             "sliceX": 24,
-                                            "sliceY": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
                                             "flipX": false,
                                             "flipY": false,
-                                            "palette": 0,
-                                            "paletteIndex": 3,
                                             "objPalette": "OBP0",
+                                            "paletteIndex": 3,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "95cb1d4b-08a2-4693-a9f0-6e89d4023035",
+                                            "x": 0,
+                                            "y": 16,
+                                            "sliceX": 16,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 3,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "a698ca38-1ea0-476a-b1e6-7de816e2e3d5",
+                                            "x": 8,
+                                            "y": 16,
+                                            "sliceX": 24,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 3,
                                             "priority": false
                                         }
                                     ]
@@ -18216,9 +19631,9 @@
                     ]
                 }
             ],
-            "numTiles": 4,
+            "numTiles": 6,
             "canvasWidth": 16,
-            "canvasHeight": 16,
+            "canvasHeight": 32,
             "boundsX": 0,
             "boundsY": 0,
             "boundsWidth": 16,
@@ -21449,6 +22864,26 @@
                 "383838",
                 "000000"
             ]
+        },
+        {
+            "id": "318ed5f5-a5dd-4a8b-b525-3f9405756910",
+            "name": "BoneBackground",
+            "colors": [
+                "F8F870",
+                "40D048",
+                "383838",
+                "000000"
+            ]
+        },
+        {
+            "id": "36e99437-bf73-414a-9a34-647497b32f53",
+            "name": "BoneBackgroundHidden",
+            "colors": [
+                "383838",
+                "383838",
+                "383838",
+                "383838"
+            ]
         }
     ],
     "customEvents": [
@@ -22190,7 +23625,7 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\006\\002 FADDDEG  H%D3\"\nVM_DISPLAY_TEXT",
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\002\\002I    FADDDEG  H%D3\"\nVM_DISPLAY_TEXT",
                                     "__comment": false
                                 },
                                 "id": "c54e5147-145c-47e5-96e8-6f27032342d3"
@@ -22200,7 +23635,7 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\006\\002 FABDDEG  H%D3\"\nVM_DISPLAY_TEXT"
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\002\\002I    FABDDEG  H%D3\"\nVM_DISPLAY_TEXT"
                                 },
                                 "id": "8ea3ccc5-5fd9-45bb-9870-0a46139830a3"
                             }
@@ -22209,7 +23644,7 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\006\\002 FABBDEG  H%D3\"\nVM_DISPLAY_TEXT"
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\002\\002I    FABBDEG  H%D3\"\nVM_DISPLAY_TEXT"
                                 },
                                 "id": "4705e1be-ca67-4eee-a99a-2bfa9d7b6383"
                             }
@@ -22218,7 +23653,7 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\006\\002 FABBBEG  H%D3\"\nVM_DISPLAY_TEXT"
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\002\\002I    FABBBEG  H%D3\"\nVM_DISPLAY_TEXT"
                                 },
                                 "id": "da351007-e4e7-44de-b48a-4efab456cdb1"
                             }
@@ -22227,7 +23662,7 @@
                             {
                                 "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\006\\002 FABBBCG  H%D3\"\nVM_DISPLAY_TEXT"
+                                    "script": "VM_OVERLAY_CLEAR 0 0 20 3 .UI_COLOR_WHITE .UI_DRAW_FRAME\nVM_LOAD_TEXT 1\n.dw VAR_BONES\n.asciz \"\\003\\002\\002I    FABBBCG  H%D3\"\nVM_DISPLAY_TEXT"
                                 },
                                 "id": "8f69ea36-50b5-498b-8d56-cbdc5a36288f"
                             }
@@ -22715,6 +24150,10 @@
         {
             "id": "d2b301fc-5e1f-410c-87d2-777c14d69ea1__L0",
             "name": "destroyed"
+        },
+        {
+            "id": "552665bf-8e58-4b6c-83ec-d64cf7580775__L0",
+            "name": "collected"
         }
     ],
     "engineFieldValues": [
@@ -22732,9 +24171,9 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 188,
-        "worldScrollY": 108,
-        "zoom": 226.9804171770811,
+        "worldScrollX": 2721,
+        "worldScrollY": 63,
+        "zoom": 414.0741826444864,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
